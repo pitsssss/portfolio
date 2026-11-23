@@ -73,7 +73,7 @@ function ScrollRuntime({ children }: { children: ReactNode }) {
     const instance = lenisRef.current;
     const element = typeof target === "string" ? document.querySelector(target) : target;
     if (!instance || !element) return;
-    instance.scrollTo(element as HTMLElement, { offset: 0, force: true });
+    instance.scrollTo(element as HTMLElement, { offset: -88, force: true });
   }, []);
 
   useEffect(() => {

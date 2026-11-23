@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useScrollLock } from "@/components/smooth-scroll";
-
-const LINKS = [
-  ["About", "#about"],
-  ["Projects", "#projects"],
-  ["Contact", "#contact"],
-] as const;
+import { NAV } from "@/content/profile";
 
 export function SiteNav() {
   const { lock, unlock } = useScrollLock();
@@ -23,7 +18,7 @@ export function SiteNav() {
       if (event.key === "Escape") setOpen(false);
     };
     const onResize = () => {
-      if (window.innerWidth >= 768) setOpen(false);
+      if (window.innerWidth >= 1024) setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     window.addEventListener("resize", onResize);
@@ -43,7 +38,7 @@ export function SiteNav() {
         inert={!open}
       >
         <ul className="mobile-list">
-          {LINKS.map(([label, href], index) => (
+          {NAV.map(({ label, href }, index) => (
             <li key={href}>
               <a className="mobile-link" href={href} onClick={close}>
                 <span
@@ -65,7 +60,7 @@ export function SiteNav() {
         </a>
 
         <ul className="desktop-nav">
-          {LINKS.map(([label, href]) => (
+          {NAV.map(({ label, href }) => (
             <li key={href}>
               <a className="nav-link" href={href}>
                 {label}

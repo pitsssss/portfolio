@@ -1,50 +1,77 @@
 import { Eyebrow } from "@/components/eyebrow";
 import { FadeUp, RevealHeading } from "@/components/reveal";
+import { NAV, CONTACT } from "@/content/profile";
 
-const SOCIALS = [
-  ["GitHub", "https://github.com"],
-  ["LinkedIn", "https://www.linkedin.com"],
-  ["X / Twitter", "https://x.com"],
+const LINKS = [
+  { label: "GitHub", href: CONTACT.github },
+  { label: "LinkedIn", href: CONTACT.linkedin },
+  { label: "Email", href: CONTACT.mailto },
 ];
 
 export function ContactFooter() {
   return (
     <footer className="contact" id="contact">
-      <Eyebrow>Contact</Eyebrow>
-      <RevealHeading
-        className="contact-title"
-        duration={940}
-        text="Building something that needs an engineer?"
-      />
+      <Eyebrow>05 / Contact</Eyebrow>
+      <RevealHeading className="contact-title" duration={940} text="Have a problem worth solving?" />
       <FadeUp as="p" className="lead contact-lead" duration={520} y={16}>
-        I take on full-stack products and AI engineering work. Send the problem, and I&apos;ll read
-        it.
+        Whether you&apos;re building a product, improving an existing system, or exploring a practical
+        AI integration, I&apos;d be interested in hearing what you&apos;re working on.
       </FadeUp>
-      <a className="email-link" href="mailto:hello@petertoss.com">
-        <span>hello@petertoss.com</span>
+      <FadeUp as="p" className="lead contact-lead contact-follow" duration={520} y={16}>
+        Tell me about the challenge, the people it&apos;s for, and what you want to achieve.
+      </FadeUp>
+      <a className="email-link" href={CONTACT.mailto}>
+        <span>{CONTACT.email}</span>
         <span className="email-arrow" aria-hidden="true">
           ↗
         </span>
       </a>
+      <p className="contact-note">
+        Open to meaningful projects, engineering collaborations, and new opportunities.
+      </p>
 
       <div className="footer-bar">
         <div className="footer-brand">
           <p className="signature">Peter Toss</p>
-          <p className="signature-note">Software engineer. Full stack. AI.</p>
+          <p className="signature-role">Full-Stack Software Engineer</p>
+          <p className="signature-note">
+            Building thoughtful products, reliable systems, and practical AI experiences.
+          </p>
         </div>
-        <nav className="footer-social" aria-label="Social">
+        <nav className="footer-nav" aria-label="Footer">
           <ul className="social-list">
-            {SOCIALS.map(([label, href]) => (
-              <li key={label}>
-                <a className="social-link" href={href} target="_blank" rel="noreferrer noopener">
+            {NAV.map((item) => (
+              <li key={item.href}>
+                <a className="social-link" href={item.href}>
                   <span className="social-rule" aria-hidden="true" />
-                  {label}
+                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
-        <p className="copyright footer-copy">© 2026 Peter Toss. All rights reserved.</p>
+        <nav className="footer-social" aria-label="Contact links">
+          <ul className="social-list">
+            {LINKS.map((item) => (
+              <li key={item.label}>
+                <a
+                  className="social-link"
+                  href={item.href}
+                  {...(item.href.startsWith("http")
+                    ? { target: "_blank", rel: "noreferrer noopener" }
+                    : {})}
+                >
+                  <span className="social-rule" aria-hidden="true" />
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="footer-end">
+          <p className="copyright">© 2026 Peter Toss.</p>
+          <p className="footer-signoff">Designed with intention. Engineered with care.</p>
+        </div>
       </div>
     </footer>
   );

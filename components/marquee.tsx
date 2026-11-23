@@ -1,10 +1,6 @@
-const WORDS = [
-  "Full Stack",
-  "AI Engineering",
-  "Product Interfaces",
-  "APIs And Data",
-  "Ship The Work",
-];
+import { MARQUEE } from "@/content/profile";
+
+const WORDS = MARQUEE;
 
 export function Marquee() {
   return (

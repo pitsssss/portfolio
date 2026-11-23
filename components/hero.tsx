@@ -1,7 +1,6 @@
 import { HeroScene } from "@/components/hero-scene";
 import { MetalFigure } from "@/components/metal-figure";
-
-const ROLES = ["Engineer", "Full Stack", "Developer", "AI Specialist"];
+import { HERO } from "@/content/profile";
 
 function NameLine({ text, delay }: { text: string; delay: number }) {
   return (
@@ -24,17 +23,31 @@ export function Hero() {
     <HeroScene>
       <div className="hero-chrome">
         <div className="hero-top">
-          <h2 className="hero-roles">
-            {ROLES.map((role, index) => (
-              <span className="role-line" key={role}>
-                <span style={{ animationDelay: `${200 + index * 80}ms` }}>{role}</span>
-              </span>
-            ))}
-          </h2>
-          <p className="hero-copy">
-            I build software end to end — the interface, the system behind it, and the AI inside it.
-            Full-stack development, with AI engineering as the specialty.
-          </p>
+          <div className="hero-identity">
+            <p className="hero-kicker">{HERO.eyebrow}</p>
+            <h2 className="hero-roles">
+              {HERO.identity.map((line, index) => (
+                <span className="role-line" key={line}>
+                  <span style={{ animationDelay: `${200 + index * 90}ms` }}>{line}</span>
+                </span>
+              ))}
+            </h2>
+          </div>
+
+          <div className="hero-aside">
+            <p className="hero-headline">{HERO.headline}</p>
+            <p className="hero-copy">{HERO.paragraph}</p>
+            <p className="hero-spec">{HERO.specialization}</p>
+            <div className="hero-actions">
+              <a className="hero-action" href={HERO.primary.href}>
+                {HERO.primary.label}
+                <span aria-hidden="true">↘</span>
+              </a>
+              <a className="hero-action hero-action-quiet" href={HERO.secondary.href}>
+                {HERO.secondary.label}
+              </a>
+            </div>
+          </div>
         </div>
 
         <p className="scroll-cue">
