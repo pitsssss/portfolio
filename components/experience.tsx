@@ -1,39 +1,34 @@
 import { Eyebrow } from "@/components/eyebrow";
-import { RevealHeading } from "@/components/reveal";
-import { COMMUNITY, EXPERIENCE, EXPERIENCE_INTRO } from "@/content/experience";
+import { FadeUp, RevealHeading } from "@/components/reveal";
+import { CV, EXPERIENCE_INTRO } from "@/content/experience";
 
 export function Experience() {
   return (
     <section className="section" id="experience">
-      <div className="section-head">
-        <div>
-          <Eyebrow>{EXPERIENCE_INTRO.eyebrow}</Eyebrow>
-          <RevealHeading className="venture-title" text={EXPERIENCE_INTRO.headline} />
-        </div>
-        <p className="lead section-lead">{EXPERIENCE_INTRO.lead}</p>
+      <div className="experience-intro">
+        <Eyebrow>{EXPERIENCE_INTRO.eyebrow}</Eyebrow>
+        <RevealHeading className="venture-title" text={EXPERIENCE_INTRO.headline} />
+        <p className="lead experience-lead">{EXPERIENCE_INTRO.lead}</p>
+        <FadeUp className="cv-release-wrap" delay={140} y={16}>
+          <a
+            className="cv-release"
+            href={CV.href}
+            download={CV.fileName}
+          >
+            <span className="cv-release-top">
+              <span className="cv-release-label">Download My CV</span>
+              <span className="cv-release-arrow" aria-hidden="true">
+                ↓
+              </span>
+            </span>
+            <span className="cv-release-rule" aria-hidden="true" />
+            <span className="cv-release-meta">
+              <span>PDF Document</span>
+              <span>01 File</span>
+            </span>
+          </a>
+        </FadeUp>
       </div>
-
-      <ol className="exp-list">
-        {EXPERIENCE.map((item) => (
-          <li className="exp-item" key={item.index}>
-            <span className="principle-index">{item.index}</span>
-            <div>
-              <div className="exp-head">
-                <h3 className="principle-title">{item.role}</h3>
-                <p className="exp-dates">{item.dates}</p>
-              </div>
-              <p className="exp-org">{item.org}</p>
-              <p className="principle-copy">{item.copy}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-
-      <aside className="community">
-        <Eyebrow>{COMMUNITY.eyebrow}</Eyebrow>
-        <h3 className="community-title">{COMMUNITY.headline}</h3>
-        <p className="principle-copy">{COMMUNITY.copy}</p>
-      </aside>
     </section>
   );
 }

@@ -18,9 +18,28 @@ function NameLine({ text, delay }: { text: string; delay: number }) {
   );
 }
 
+function HeroCopy() {
+  return (
+    <div className="hero-aside">
+      <p className="hero-headline">{HERO.headline}</p>
+      <p className="hero-copy">{HERO.paragraph}</p>
+      <p className="hero-spec">{HERO.specialization}</p>
+      <div className="hero-actions">
+        <a className="hero-action" href={HERO.primary.href}>
+          {HERO.primary.label}
+          <span aria-hidden="true">↘</span>
+        </a>
+        <a className="hero-action hero-action-quiet" href={HERO.secondary.href}>
+          {HERO.secondary.label}
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
-    <HeroScene>
+    <HeroScene after={<div className="hero-follow"><HeroCopy /></div>}>
       <div className="hero-chrome">
         <div className="hero-top">
           <div className="hero-identity">
@@ -34,20 +53,7 @@ export function Hero() {
             </h2>
           </div>
 
-          <div className="hero-aside">
-            <p className="hero-headline">{HERO.headline}</p>
-            <p className="hero-copy">{HERO.paragraph}</p>
-            <p className="hero-spec">{HERO.specialization}</p>
-            <div className="hero-actions">
-              <a className="hero-action" href={HERO.primary.href}>
-                {HERO.primary.label}
-                <span aria-hidden="true">↘</span>
-              </a>
-              <a className="hero-action hero-action-quiet" href={HERO.secondary.href}>
-                {HERO.secondary.label}
-              </a>
-            </div>
-          </div>
+          <HeroCopy />
         </div>
 
         <p className="scroll-cue">

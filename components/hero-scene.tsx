@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 
-export function HeroScene({ children }: { children: ReactNode }) {
+export function HeroScene({ children, after }: { children: ReactNode; after?: ReactNode }) {
   const trackRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -35,6 +35,7 @@ export function HeroScene({ children }: { children: ReactNode }) {
   return (
     <section className="hero-story" id="top" ref={trackRef}>
       <div className="hero">{children}</div>
+      {after}
     </section>
   );
 }
