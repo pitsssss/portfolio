@@ -1,4 +1,5 @@
 import { HeroScene } from "@/components/hero-scene";
+import { Marquee } from "@/components/marquee";
 import { MetalFigure } from "@/components/metal-figure";
 import { HERO } from "@/content/profile";
 
@@ -39,7 +40,16 @@ function HeroCopy() {
 
 export function Hero() {
   return (
-    <HeroScene after={<div className="hero-follow"><HeroCopy /></div>}>
+    <HeroScene
+      after={
+        <>
+          <Marquee />
+          <div className="hero-follow">
+            <HeroCopy />
+          </div>
+        </>
+      }
+    >
       <div className="hero-chrome">
         <div className="hero-top">
           <div className="hero-identity">

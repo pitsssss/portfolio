@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${anton.variable} ${onest.variable}`}>
+    <html lang="en" className={`${anton.variable} ${onest.variable} is-intro`}>
       <body>
         <noscript>
           <style>{`.preloader{display:none}.name-letter,.role-line>span,.hero-copy,.hero-aside,.scroll-cue,.quote-word,.line-inner,.fade-up{opacity:1!important;transform:none!important}`}</style>

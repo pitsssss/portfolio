@@ -20,8 +20,8 @@ export function ContactFooter() {
       <FadeUp as="p" className="lead contact-lead contact-follow" duration={520} y={16}>
         Tell me about the challenge, the people it&apos;s for, and what you want to achieve.
       </FadeUp>
-      <a className="email-link" href={CONTACT.mailto}>
-        <span>{CONTACT.email}</span>
+      <a className="email-link" href={CONTACT.mailto} aria-label={`Contact via email: ${CONTACT.email}`}>
+        <span>Contact via email</span>
         <span className="email-arrow" aria-hidden="true">
           ↗
         </span>
