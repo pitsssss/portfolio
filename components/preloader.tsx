@@ -131,6 +131,38 @@ export function Preloader() {
       root.classList.add("is-name-settled");
     };
 
+    const settleUnderCurtain = (motion: { flights: LineFlight[]; vars: FlightVars } | null) => {
+      root.classList.remove("is-intro");
+      const name = heroName();
+      if (!name || !motion) return;
+
+      root.classList.remove("is-name-flight");
+      const box = name.getBoundingClientRect();
+      const fontSize = getComputedStyle(name).fontSize;
+      if (box.width < 2 || box.height < 2) {
+        root.classList.add("is-name-flight");
+        return;
+      }
+
+      motion.vars.flightLeft = `${box.left}px`;
+      motion.vars.flightTop = `${box.top}px`;
+      motion.vars.flightWidth = `${box.width}px`;
+      motion.vars.flightFont = fontSize;
+      motion.vars.intro = "1";
+      motion.vars.lines = undefined;
+      renderFlightSheet(motion.vars);
+      root.classList.add("is-name-flight");
+
+      const placed = name.getBoundingClientRect();
+      const shiftX = box.left - placed.left;
+      const shiftY = box.top - placed.top;
+      if (Math.abs(shiftX) > 0.5 || Math.abs(shiftY) > 0.5) {
+        motion.vars.flightLeft = `${box.left + shiftX}px`;
+        motion.vars.flightTop = `${box.top + shiftY}px`;
+        renderFlightSheet(motion.vars);
+      }
+    };
+
     const resetToCompact = () => {
       const name = heroName();
       if (name) stripInjectedMotion(name);
@@ -261,6 +293,7 @@ export function Preloader() {
         timeouts.push(
           window.setTimeout(() => {
             if (cancelled) return;
+            settleUnderCurtain(motion);
             setPhase("wipe");
             root.classList.add("is-revealed");
           }, 420),
@@ -269,7 +302,7 @@ export function Preloader() {
           window.setTimeout(() => {
             if (cancelled) return;
             finish();
-          }, 1200),
+          }, 1500),
         );
       };
 

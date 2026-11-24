@@ -23,7 +23,10 @@ function ProjectLinks({ project }: { project: Project }) {
             aria-label={`${link.label} for ${project.title}`}
           >
             <span className="social-rule" aria-hidden="true" />
-            {link.label}
+            <span className="work-link-label">{link.label}</span>
+            <span className="work-link-arrow" aria-hidden="true">
+              ↗
+            </span>
           </a>
         </li>
       ))}

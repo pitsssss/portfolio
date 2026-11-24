@@ -76,8 +76,8 @@ export const PROJECTS: Project[] = [
     confidential: false,
     links: [
       {
-        label: "Backend Source Code",
-        href: "https://github.com/pitsssss/DLMS_Project",
+        label: "SYRTAK Engineering Case Study",
+        href: "https://syrtak-engineering-case-study.vercel.app/en",
       },
     ],
     layout: "feature",

@@ -38,34 +38,31 @@ export const ABOUT = {
   eyebrow: "01 / About",
   headline: "I think beyond the interface.",
   paragraphs: [
-    "I'm Peter Toss, a Full-Stack Software Engineer with a foundation in software architecture, system analysis, and product development.",
-    "My work starts before the first line of code. I like understanding the problem, mapping the workflows, and identifying the decisions that will shape the system.",
-    "From there, I work across the stack — building interfaces, designing APIs, modeling data, integrating services, and making sure the pieces work together.",
-    "I've contributed to professional web platforms, internal business systems, and end-to-end engineering projects. I also work with practical AI integrations, including LLM-powered features, controlled agents, and workflow automation.",
-    "What matters most to me is building software that solves real problems, remains understandable, and can evolve without becoming fragile.",
+    "I'm Peter Toss, a full-stack engineer. I start with the problem, the workflows, and the decisions that shape the system.",
+    "Then I build the interface, APIs, data, and practical AI together, so the product stays clear and able to change.",
   ],
-  statement: "Good software is not just written. It's understood, designed, tested, and improved.",
+  statement: "Good software is understood, designed, tested, and improved.",
 } as const;
 
 export const PRINCIPLES = [
   {
     index: "01",
     title: "Understand before building",
-    copy: "I start with the business problem, user needs, workflows, and constraints before deciding how the software should work.",
+    copy: "Problem, workflows, and constraints come before the build.",
   },
   {
     index: "02",
     title: "Engineer the full system",
-    copy: "I connect the interface, API, database, and integrations so the product behaves as one coherent system.",
+    copy: "Interface, API, data, and integrations act as one system.",
   },
   {
     index: "03",
     title: "Build for real conditions",
-    copy: "Permissions, validation, failure handling, maintainability, and testing are part of the implementation — not afterthoughts.",
+    copy: "Permissions, failure handling, and testing belong in the build.",
   },
   {
     index: "04",
     title: "Use AI with purpose",
-    copy: "I integrate AI where it adds real value, while keeping business rules, sensitive operations, and critical decisions under application control.",
+    copy: "Used where it helps, with critical decisions kept in the product.",
   },
 ] as const;

@@ -9,8 +9,8 @@ export function Services() {
         <div>
           <Eyebrow>{SERVICES_INTRO.eyebrow}</Eyebrow>
           <RevealHeading className="venture-title" text={SERVICES_INTRO.headline} />
+          <p className="lead section-lead">{SERVICES_INTRO.lead}</p>
         </div>
-        <p className="lead section-lead">{SERVICES_INTRO.lead}</p>
       </div>
 
       <ol className="service-list">

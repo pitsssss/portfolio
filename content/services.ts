@@ -8,7 +8,7 @@ export const SERVICES = [
   {
     index: "01",
     title: "Full-Stack Web Development",
-    copy: "I design and develop complete web applications, from responsive user interfaces to backend APIs, database integration, and production-oriented delivery.",
+    copy: "Interfaces, APIs, data, and delivery as one product.",
     capabilities: [
       "Next.js & React",
       "Laravel & Node.js ecosystems",
@@ -21,7 +21,7 @@ export const SERVICES = [
   {
     index: "02",
     title: "Backend Systems & Architecture",
-    copy: "I build and improve backend foundations for applications with complex business workflows, integrations, and data requirements.",
+    copy: "Workflows, integrations, and data that stay consistent.",
     capabilities: [
       "System architecture",
       "Domain and business logic",
@@ -36,7 +36,7 @@ export const SERVICES = [
   {
     index: "03",
     title: "AI Integration & Automation",
-    copy: "I integrate practical AI capabilities into existing products and workflows, connecting language models with application logic, tools, and controlled actions.",
+    copy: "AI features wired to real logic, with control kept in the product.",
     capabilities: [
       "LLM API integration",
       "AI-powered product features",
@@ -50,7 +50,7 @@ export const SERVICES = [
   {
     index: "04",
     title: "System Analysis & Product Engineering",
-    copy: "I help shape software before and during development by translating operational needs into clear workflows, requirements, technical designs, and usable interfaces.",
+    copy: "Needs turned into workflows, requirements, and interfaces.",
     capabilities: [
       "Requirements analysis",
       "Business process modeling",
@@ -66,7 +66,7 @@ export const SERVICES = [
 
 export const TOOLS = {
   headline: "Tools change. Engineering fundamentals stay.",
-  note: "A working set from real projects. Not a ranking, and not a claim of equal depth in every tool.",
+  note: "A working set from real projects. Not a ranking.",
   groups: [
     {
       label: "Frontend",
