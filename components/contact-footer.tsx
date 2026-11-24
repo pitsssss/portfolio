@@ -31,43 +31,49 @@ export function ContactFooter() {
       </p>
 
       <div className="footer-bar">
-        <div className="footer-brand">
-          <p className="signature">Peter Toss</p>
-          <p className="signature-role">Full-Stack Software Engineer</p>
-          <p className="signature-note">
-            Building thoughtful products, reliable systems, and practical AI experiences.
-          </p>
+        <div className="footer-main">
+          <div className="footer-brand">
+            <p className="signature">Peter Toss</p>
+            <p className="signature-role">Full-Stack Software Engineer</p>
+            <p className="signature-note">
+              Building thoughtful products, reliable systems, and practical AI experiences.
+            </p>
+          </div>
+          <div className="footer-links">
+            <nav className="footer-nav" aria-label="Footer">
+              <p className="footer-label">Index</p>
+              <ul className="social-list">
+                {NAV.map((item) => (
+                  <li key={item.href}>
+                    <a className="social-link" href={item.href}>
+                      <span className="social-rule" aria-hidden="true" />
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <nav className="footer-social" aria-label="Contact links">
+              <p className="footer-label">Connect</p>
+              <ul className="social-list">
+                {LINKS.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      className="social-link"
+                      href={item.href}
+                      {...(item.href.startsWith("http")
+                        ? { target: "_blank", rel: "noreferrer noopener" }
+                        : {})}
+                    >
+                      <span className="social-rule" aria-hidden="true" />
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
-        <nav className="footer-nav" aria-label="Footer">
-          <ul className="social-list">
-            {NAV.map((item) => (
-              <li key={item.href}>
-                <a className="social-link" href={item.href}>
-                  <span className="social-rule" aria-hidden="true" />
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <nav className="footer-social" aria-label="Contact links">
-          <ul className="social-list">
-            {LINKS.map((item) => (
-              <li key={item.label}>
-                <a
-                  className="social-link"
-                  href={item.href}
-                  {...(item.href.startsWith("http")
-                    ? { target: "_blank", rel: "noreferrer noopener" }
-                    : {})}
-                >
-                  <span className="social-rule" aria-hidden="true" />
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
         <div className="footer-end">
           <p className="copyright">© 2026 Peter Toss.</p>
           <p className="footer-signoff">Designed with intention. Engineered with care.</p>
